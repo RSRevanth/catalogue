@@ -23,6 +23,7 @@ pipeline {
                 sh 'ls -ltr'
                 sh 'zip -r ./* --exclude=.git'
             }
+        }
         stage('Deploy') {
             steps {
                 echo "Deployment"
@@ -34,7 +35,7 @@ pipeline {
     post { 
             always { 
                 echo 'cleaning up workspace'
-                deleteDir()
+                // deleteDir()
             }
     }
 }
