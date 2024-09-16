@@ -21,8 +21,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'ls -ltr'
+                sh 'zip -r ./* --exclude=.git'
             }
-        }
         stage('Deploy') {
             steps {
                 echo "Deployment"
